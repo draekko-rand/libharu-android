@@ -24,21 +24,23 @@ ndk-build
 
 Usage
 ---
+
 Copy the .so files that are generated to your jniLibs folder in your Android Studio studio project. Make sure to have one folder per architecture types supported as below.  
 
-ASProject 
-    module
-        src
-            main
-                jniLibs
-                    armeabi
-                    armeab-v7a
-                    arm64-v8a
-                    x86
-                    x86_64
-                    mips
-                    mips64
-
+```
+ASProject  
+    +---+module  
+        +---+src  
+            +---+main  
+                +---+jniLibs  
+                    +--->armeabi  
+                    +--->armeab-v7a  
+                    +--->arm64-v8a  
+                    +--->x86  
+                    +--->x86_64  
+                    +--->mips  
+                    +--->mips64  
+```
 
 Extra
 ---
