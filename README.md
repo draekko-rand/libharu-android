@@ -9,7 +9,7 @@ LibHaru is a free, cross platform, open source library for generating PDF files,
 Requirements
 ---
 
-Requires setting up the latest Android NDK (uses marshmallow, platform 23 as of this readme file) to compile the project .so files.  
+Requires setting up the latest Android NDK to compile the project .so files.  
 
 
 Compiling .so library files
