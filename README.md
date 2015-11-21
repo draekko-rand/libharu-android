@@ -41,7 +41,7 @@ ASProject
 
 
 Extra
-===
 ---
+
 Included with the low level code is a sample Android Studio project to demonstrate usage.
 
