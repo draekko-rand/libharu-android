@@ -82,8 +82,8 @@ UTF8_Encoder_ByteType_Func  (HPDF_Encoder        encoder,
 
     if (state->index == 0) {
 	//First byte, initialize.
-	HPDF_PTRACE (" UTF8_Encoder_ByteType_Func - Initialize: (%u) %s\n",
-		      state->len, state->text);
+	HPDF_PTRACE ((" UTF8_Encoder_ByteType_Func - Initialize: (%u) %s\n",
+		      state->len, state->text));
 
 	utf8_attr->current_byte = 0;
     }
@@ -91,7 +91,12 @@ UTF8_Encoder_ByteType_Func  (HPDF_Encoder        encoder,
     byte = state->text[state->index];
     state->index++;
 
-    HPDF_PTRACE (" UTF8_Encoder_ByteType_Func - Byte: %hx\n", byte);
+    HPDF_PTRACE ((" UTF8_Encoder_ByteType_Func - Byte: %hx\n",
+#if defined(__ANDROID__)
+                (unsigned short)byte));
+#else
+                byte));
+#endif
 
     if (utf8_attr->current_byte == 0) {
 	utf8_attr->utf8_bytes[0] = byte;
@@ -242,7 +247,7 @@ UTF8_Init  (HPDF_Encoder  encoder)
                 HPDF_LIMIT_MAX_NAME_LEN);
     attr->suppliment = 0;
     attr->writing_mode = HPDF_WMODE_HORIZONTAL;
-    
+
     /* Not sure about this
     attr->uid_offset = 0;
     attr->xuid[0] = 0;

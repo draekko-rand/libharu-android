@@ -31,9 +31,6 @@
 #endif
 
 #include <stdlib.h>
-#ifdef __ANDROID64__
-#include <stdint.h>
-#endif
 
 #ifdef __cplusplus
 extern "C" {
@@ -91,10 +88,11 @@ typedef  signed int          HPDF_BOOL;
 typedef  unsigned long       HPDF_STATUS;
 
 #ifdef __ANDROID64__
-/*  
+/*  pointers
  */
 typedef  uintptr_t           HPDF_UINTPTR;
 #endif
+
 
 /*  charactor-code type (16bit)
  */
@@ -588,4 +586,3 @@ typedef enum _HPDF_NameDictKey {
 #endif /* __cplusplus */
 
 #endif /* _HPDF_TYPES_H */
-

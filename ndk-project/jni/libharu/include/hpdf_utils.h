@@ -160,12 +160,13 @@ HPDF_UInt16Swap  (HPDF_UINT16  *value);
 #define LOGD(...)  __android_log_print(ANDROID_LOG_DEBUG, LOG_TAG, __VA_ARGS__)
 #define LOGI(...)  __android_log_print(ANDROID_LOG_INFO, LOG_TAG, __VA_ARGS__)
 #define LOGV(...)  __android_log_print(ANDROID_LOG_VERBOSE, LOG_TAG, __VA_ARGS__)
-#define HPDF_PTRACE(...)  LOGV(__VA_ARGS__)
+//#define HPDF_PTRACE(...)  LOGV(ANDROID_LOG_VERBOSE, LOG_TAG, __VA_ARGS__)
+#define HPDF_PTRACE(ARGS) LOGV ARGS
 #else
-#define HPDF_PTRACE(...)  HPDF_PRINTF (__VA_ARGS__)
+#define HPDF_PTRACE(ARGS) HPDF_PRINTF ARGS
 #endif
 #else
-#define HPDF_PTRACE(...)   /* do nothing */ 
+#define HPDF_PTRACE(ARGS)  /* do nothing */
 #endif /* HPDF_PTRACE */
 
 #ifdef LIBHPDF_DEBUG
@@ -175,4 +176,3 @@ HPDF_UInt16Swap  (HPDF_UINT16  *value);
 #endif
 
 #endif /* _HPDF_UTILS_H */
-
